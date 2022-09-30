@@ -2,6 +2,7 @@ package projectOnboarding;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class September26_2022 {
 	public static int[] sortArray(int N, int[] A)
@@ -23,10 +24,25 @@ public class September26_2022 {
 		
 		return B;
 	}
+
+	public static int largestGap (int N, int[] A)
+	{
+		int gap = 0;
+		int[] B = sortArray(N,A);
+		for (int i=0;i<N-1;i++) {if ((B[i+1]-B[i])>gap) gap=B[i+1]-B[i];}
+		
+		return gap;
+	}
+
 	public static void main(String args[])
 	{
-		int[] A = {5, 8, 2, 13, 2, 9}; //hard-coding this for now
-		int[] B = sortArray(A.length, A);
-		for (int i=0;i<B.length;i++) {System.out.println(B[i]);}
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int[] A = new int[N];
+		for (int i=0;i<N;i++) {A[i]=sc.nextInt();}
+		sc.close();
+		
+		System.out.println(largestGap(N,A));
 	}
 }
