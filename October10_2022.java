@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class October10_2022 {
-	public static boolean listIntersect(LinkedList A, LinkedList B) 
+	public static boolean listIntersect(LinkedList<String> A, LinkedList<String> B) 
 	{
 		boolean intersection = false;
 		for (int i=0;i<A.size();i++)
@@ -19,7 +19,7 @@ public class October10_2022 {
 		return intersection;
 	}
 	
-	public static Object findCircle(LinkedList A)
+	public static Object findCircle(LinkedList<String> A)
 	{
 		Object o = null;
 		List<Object> seen = new ArrayList<>();
